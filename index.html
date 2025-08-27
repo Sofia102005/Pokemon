@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Selector de pokemons</title>
-    <link rel="stylesheet" href="./src/css/Stlyles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./src/css/Stlyles.css" />
+  </head>
+  <body>
     <div class="card">
-        <div class="img-conter">
-            <img src="" alt="" id="pokemon-img">
-        </div>
-        <h1 id="pokemon-name"></h1>
-        <p id="pokemon-id"></p>
-        <div class="type"></div>
-        <div class="buttons">
-            <button type="button" class="prev">◀ Anterior</button>
-            <button type="button" class="next">Siguiente ▶</button>
-            
-        </div>
+      <div class="img-conter">
+        <img src="" alt="" id="pokemon-img" />
+      </div>
+      <h1 id="pokemon-name"></h1>
+      <p id="pokemon-id"></p>
+      <div class="type"></div>
+      <div class="buttons">
+        <button type="button" class="prev">◀ Anterior</button>
+        <button type="button" class="next">Siguiente ▶</button>
+      </div>
     </div>
+    <div id="pokemon-modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <h2 id="modal-name"></h2>
+        <img id="modal-img" src="" alt="pokemon grande" />
+
+        <p id="modal-id" class="pokemon-id"></p>
+
+        <div class="modal-info">
+          <p><strong>Altura:</strong> <span id="modal-height"></span> m</p>
+          <p><strong>Peso:</strong> <span id="modal-weight"></span> kg</p>
+          <p>
+            <strong>Habilidades:</strong> <span id="modal-abilities"></span>
+          </p>
+        </div>
+
+        <div id="modal-stats" class="modal-stats"></div>
+      </div>
+    </div>
+
     <script type="module" src="./src/main.js"></script>
-</body>
+  </body>
 </html>

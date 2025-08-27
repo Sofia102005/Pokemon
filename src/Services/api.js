@@ -20,4 +20,14 @@ try {
     console.error(error);
     return null;
 }
+
+// Extraer las habilidades
+const abilities = data.abilities.map(a => a.ability.name);
+
+// Extraer las estadísticas
+const stats = data.stats.map(s => ({
+    stat: s.stat.name,
+    base: s.base_stat
+}));
+
 }

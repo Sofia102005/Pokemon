@@ -4,6 +4,9 @@ export function showPokemon (pokemon) {
     document.getElementById ("pokemon-img").src = pokemon.sprite;
     document.getElementById ("pokemon-name").textContent = capitalize(pokemon.name);
     document.getElementById ("pokemon-id").textContent = "#" + pokemon.id.toString().padStart(3, "0");
+    // Mostrar modal
+    document.querySelector(".pokemon-img").onclick = () => showModal(pokemon);
+
 
     const typesDiv = document.querySelector (".type");
     typesDiv.innerHTML = "";
@@ -19,3 +22,4 @@ export function showPokemon (pokemon) {
 function capitalize (word) {
     return word.charAt (0).toUpperCase() + word.slice (1);
 }
+
