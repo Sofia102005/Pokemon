@@ -5,12 +5,12 @@ export function showPokemon (pokemon) {
     document.getElementById ("pokemon-name").textContent = capitalize(pokemon.name);
     document.getElementById ("pokemon-id").textContent = "#" + pokemon.id.toString().padStart(3, "0");
 
-    const typesDiv = document.querySelector (".types");
+    const typesDiv = document.querySelector (".type");
     typesDiv.innerHTML = "";
     pokemon.types.forEach (t => {
         const span = document.createElement ("span");
         span.classList.add("type", t);
-        span.tectContent = capitalize (t);
+        span.textContent = capitalize (t);
         typesDiv.appendChild(span);
     })
 
