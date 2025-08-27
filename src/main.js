@@ -1,11 +1,12 @@
 import { fetchPokemon } from "./Services/api.js";
-import { showPokemon } from "./ui/ui.js";
+import { showModal, showPokemon } from "./ui/ui.js";
 
 let current = 25; 
 
 async function loadPokemon(id) {
   const pokemon = await fetchPokemon(id);
   showPokemon(pokemon);
+  showModal(pokemon);
 }
 
 
