@@ -12,7 +12,7 @@ body {
 
 .card{
     background: rgb(255, 255, 255,0.1);
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 20px;
     text-align: center;
     width: 300px;
@@ -21,6 +21,7 @@ body {
 }
 .card:hover{
     transform: scale(1.03);
+    
 
 }
 .card img{
@@ -30,6 +31,12 @@ body {
     border-radius: 50%;
     border: 2px solid #fff;
     margin-bottom: 16px;
+    transition: transform 0.3s ease;
+    
+}
+.card img:hover{
+    transform: scale(1.03);
+    zoom: 115%;
 }
 
 h2{
