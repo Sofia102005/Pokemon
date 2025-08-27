@@ -1,15 +1,15 @@
-body{
+body {
     font-family: 'Segoe UI', sans-serif;
     color: #fff;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* tonos azul oscuro con aire místico */
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
-    
-    
 }
+
+
 .card{
     background: rgb(255, 255, 255,0.1);
     border-radius: 20px;
