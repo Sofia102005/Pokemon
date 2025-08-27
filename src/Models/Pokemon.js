@@ -4,5 +4,9 @@ export default class Pokemon {
         this.name = name;
         this.types = types;
         this.sprite = sprite;
+        this.size = size;
+        this.weight = weight;
+        this.skills=skills;
+        this.statistics=statistics;
     }
 }
