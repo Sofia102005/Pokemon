@@ -46,7 +46,34 @@ export function showModal (pokemon){
     const statsDiv = document.getElementById ("modal-stats");
     statsDiv.innerHTML = "<h3>Estadisticas</h3>";
     pokemon.stats.forEach (s => {
+    const statContainer = document.createElement("div");
+    statContainer.classList.add("stat-container");
 
+    // Nombre
+    const name = document.createElement("span");
+    name.classList.add("stat-name");
+    name.textContent = capitalize(s.stat);
+
+    // Barra
+    const progressWrapper = document.createElement("div");
+    progressWrapper.classList.add("progress-wrapper");
+
+    const progress = document.createElement("div");
+    progress.classList.add("progress-bar");
+    progress.style.width = (s.base / 255 * 100) + "%";
+
+    progressWrapper.appendChild(progress);
+
+    // Valor
+    const value = document.createElement("span");
+    value.classList.add("stat-value");
+    value.textContent = s.base;
+
+    statContainer.appendChild(name);
+    statContainer.appendChild(progressWrapper);
+    statContainer.appendChild(value);
+
+    statsDiv.appendChild(statContainer);
     })
         document.querySelector(".pokemon-img").onclick = () => showModal(pokemon);
 

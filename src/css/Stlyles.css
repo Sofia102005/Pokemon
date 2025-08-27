@@ -92,3 +92,37 @@ button:active{
 .type.ghost { background: #313d70; }
 .type.dark { background: #222222; }
 .type.dragon { background: #3f23bb; }
+
+.stat-container {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.stat-name {
+    width: 120px;
+    text-transform: capitalize;
+    font-weight: 00%;
+}
+
+.progress-wrapper {
+    flex: 1;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #3dc7ef;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.stat-value {
+    width: 30px;
+    text-align: right;
+    font-weight: bold;
+    }
