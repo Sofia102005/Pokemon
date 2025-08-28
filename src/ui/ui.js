@@ -6,9 +6,7 @@ export function showPokemon (pokemon) {
     document.getElementById ("pokemon-name").textContent = capitalize(pokemon.name);
     document.getElementById ("pokemon-id").textContent = "#" + pokemon.id.toString().padStart(3, "0");
 
-    
-
-
+    //Tipos
     const typesDiv = document.querySelector (".type");
     typesDiv.innerHTML = "";
     pokemon.types.forEach (t => {
@@ -18,12 +16,19 @@ export function showPokemon (pokemon) {
         typesDiv.appendChild(span);
     })
 
-    
+    document.querySelector(".pokemon-img").onclick = () => {
+        showModal(pokemon);
+        document.getElementById('pokemon-modal').classList.remove('hidden')
+        //document.getElementById('pokemon-modal').style.display = 'block';
+    }
+    //document.querySelector(".pokemon-img").onclick = () => alert(`hola`);
 }
 
 function capitalize (word) {
     return word.charAt (0).toUpperCase() + word.slice (1);
 }
+
+    //Modal
 
 export function showModal (pokemon){
     if (!pokemon) return;
@@ -33,6 +38,7 @@ export function showModal (pokemon){
     document.getElementById ("modal-height").textContent = capitalize(pokemon.height.toString());
     document.getElementById ("modal-weight").textContent = capitalize(pokemon.weight.toString());
 
+    //Habilidades
     const abilitiesDiv = document.getElementById ("modal-abilities");
     abilitiesDiv.innerHTML = "";
     pokemon.abilities.forEach (a => {
@@ -42,42 +48,37 @@ export function showModal (pokemon){
         abilitiesDiv.appendChild(span);
     })
 
-
+    //Estadisticas
     const statsDiv = document.getElementById ("modal-stats");
     statsDiv.innerHTML = "<h3>Estadisticas</h3>";
     pokemon.stats.forEach (s => {
     const statContainer = document.createElement("div");
     statContainer.classList.add("stat-container");
 
-    // Nombre
     const name = document.createElement("span");
     name.classList.add("stat-name");
     name.textContent = capitalize(s.stat);
 
-    // Barra
-    const progressWrapper = document.createElement("div");
-    progressWrapper.classList.add("progress-wrapper");
+    //Barra de Stats
+    const progressBar = document.createElement("div");
+    progressBar.classList.add("progress-bar");
 
+    //Barra de Stats-Completado
     const progress = document.createElement("div");
-    progress.classList.add("progress-bar");
+    progress.classList.add("progress-barCompl");
     progress.style.width = (s.base / 255 * 100) + "%";
+    
+    progressBar.appendChild(progress);
 
-    progressWrapper.appendChild(progress);
-
-    // Valor
     const value = document.createElement("span");
     value.classList.add("stat-value");
     value.textContent = s.base;
 
     statContainer.appendChild(name);
-    statContainer.appendChild(progressWrapper);
+    statContainer.appendChild(progressBar);
     statContainer.appendChild(value);
 
     statsDiv.appendChild(statContainer);
     })
-        document.querySelector(".pokemon-img").onclick = () => showModal(pokemon);
-
 }
-
-
     

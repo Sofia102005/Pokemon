@@ -1,128 +1,200 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    color: #fff;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* tonos azul oscuro con aire místico */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #0f2027,
+    #203a43,
+    #2c5364
+  ); /* tonos azul oscuro con aire místico */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-
-.card{
-    background: rgb(255, 255, 255,0.1);
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-    height: 450px;
+.card {
+  background: rgb(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  height: 450px;
 }
-.card:hover{
-    transform: scale(1.03);
-    
-
+.card:hover {
+  transform: scale(1.03);
 }
-.card img{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    margin-bottom: 16px;
-    transition: transform 0.3s ease;
-    
+.card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
 }
-.card img:hover{
-    transform: scale(1.10);
+.card img:hover {
+  transform: scale(1.1);
 }
 
-
-
-h2{
-    margin: 10px 0px;
+h2 {
+  margin: 10px 0px;
 }
 
-.buttons{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-button{
-    background: #2f2658bb;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #fff;
-    transition: background 0.3s;
+button {
+  background: #2f2658bb;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  transition: background 0.3s;
 }
 
-button:hover{
-    background: #1f1c2c;
+button:hover {
+  background: #1f1c2c;
 }
-button:active{
-    background: #3dc7ef;
+button:active {
+  background: #3dc7ef;
 }
-.type{
-      border: none;
-    padding: 10px 20px;
-    border-radius: 12px;
+.type {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
 }
-.type.normal { background: #bdbdbd; color: #000; }
-.type.electric { background: #f7d02c; color: #000; }
-.type.fire { background: #ee8130; }
-.type.ground { background: #833900; }
-.type.rock { background: #e9d45f; color: #000; }
-.type.water { background: #6390f0; }
-.type.grass { background: #7ac74c; }
-.type.bug { background: #729f3f; }
-.type.flying { background: #3dc7ef; }
-.type.ice { background: #9be9ff; color: #000; }
-.type.poison { background: #9e0a72; }
-.type.fairy { background: #ff87db; }
-.type.fighting { background: #d33333; }
-.type.psychic { background: #aa0088; }
-.type.steel { background: #616161; }
-.type.ghost { background: #313d70; }
-.type.dark { background: #222222; }
-.type.dragon { background: #3f23bb; }
+.type.normal {
+  background: #bdbdbd;
+  color: #000;
+}
+.type.electric {
+  background: #f7d02c;
+  color: #000;
+}
+.type.fire {
+  background: #ee8130;
+}
+.type.ground {
+  background: #833900;
+}
+.type.rock {
+  background: #e9d45f;
+  color: #000;
+}
+.type.water {
+  background: #6390f0;
+}
+.type.grass {
+  background: #7ac74c;
+}
+.type.bug {
+  background: #729f3f;
+}
+.type.flying {
+  background: #3dc7ef;
+}
+.type.ice {
+  background: #9be9ff;
+  color: #000;
+}
+.type.poison {
+  background: #9e0a72;
+}
+.type.fairy {
+  background: #ff87db;
+}
+.type.fighting {
+  background: #d33333;
+}
+.type.psychic {
+  background: #aa0088;
+}
+.type.steel {
+  background: #616161;
+}
+.type.ghost {
+  background: #313d70;
+}
+.type.dark {
+  background: #222222;
+}
+.type.dragon {
+  background: #3f23bb;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.modal-content {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 500px;
+  max-height: 900px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+#pokemon-img {
+  cursor: pointer;
+}
+.modal img {
+  width: 75%;
+  height: 75%;
+  place-items: center;
+}
 
 .stat-container {
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
 }
 
 .stat-name {
-    width: 120px;
-    text-transform: capitalize;
-    font-weight: 00%;
-}
-
-.progress-wrapper {
-    flex: 1;
-    height: 10px;
-    background: #e0e0e0;
-    border-radius: 10px;
-    margin: 0 10px;
-    overflow: hidden;
+  width: 120px;
+  text-transform: capitalize;
 }
 
 .progress-bar {
-    height: 100%;
-    background: #3dc7ef;
-    border-radius: 10px;
-    transition: width 0.5s ease;
+  flex: 1;
+  height: 10px;
+  background: #7c7a7a;
+  border-radius: 10px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.progress-barCompl {
+  height: 100%;
+  background: #3dc7ef;
+  border-radius: 10px;
+  transition: width 0.5s ease;
 }
 
 .stat-value {
-    width: 30px;
-    text-align: right;
-    font-weight: bold;
-    }
+  width: 30px;
+  text-align: right;
+  font-weight: bold;
+}

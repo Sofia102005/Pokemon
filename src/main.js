@@ -6,12 +6,9 @@ let current = 25;
 async function loadPokemon(id) {
   const pokemon = await fetchPokemon(id);
   showPokemon(pokemon);
-  showModal(pokemon);
 }
 
-
 loadPokemon(current);
-
 
 document.querySelector(".next").addEventListener("click", () => {
   current++;
