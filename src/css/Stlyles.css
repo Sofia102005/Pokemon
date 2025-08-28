@@ -160,6 +160,9 @@ button:active {
 #pokemon-img {
   cursor: pointer;
 }
+#close-modal {
+  cursor: pointer;
+}
 .modal img {
   width: 75%;
   height: 75%;

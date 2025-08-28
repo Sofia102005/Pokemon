@@ -22,6 +22,10 @@ export function showPokemon (pokemon) {
         //document.getElementById('pokemon-modal').style.display = 'block';
     }
     //document.querySelector(".pokemon-img").onclick = () => alert(`hola`);
+
+    document.getElementById("close-modal").onclick = () => {
+        document.getElementById("pokemon-modal").classList.add("hidden");
+    };
 }
 
 function capitalize (word) {
@@ -80,5 +84,6 @@ export function showModal (pokemon){
 
     statsDiv.appendChild(statContainer);
     })
+     
 }
     
