@@ -131,8 +131,9 @@
     background: #3f23bb;
   }
 
- 
-
+#pokemon-img{
+  cursor: pointer;
+}
 
 /*modal*/
 .modal {
